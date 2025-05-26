@@ -1,0 +1,25 @@
+name: freyescia
+services:
+  mariadb:
+    image: mariadb:11.7
+    container_name: mariadb
+    env_file:
+      - .env
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - webapp
+
+volumes:
+  mariadb_data:
+
+networks:
+  webapp:
