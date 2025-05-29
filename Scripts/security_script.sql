@@ -16,10 +16,10 @@ VALUES
 INSERT INTO `Account`
 (nickname, `password`, `user_id`, role_id, office_id)
 VALUES
-('jfuilco', '', 1, 1, 1);
+('jfuilco', '$2a$10$0ruKB2xy7n3pJOc9RhG/Q.6T2iz0p5yFWjkzXXh96cIm4o/GGg5rK', 1, 1, 1); 
 
 INSERT INTO `Application`
-(application_name, `description`)
+(application_name)
 VALUES
 ('Producción'), ('Facturación'), ('Facturación Temporal'), ('Usuarios');
 
