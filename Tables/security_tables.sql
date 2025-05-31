@@ -31,7 +31,8 @@ CREATE TABLE IF NOT EXISTS `Account` (
     office_id INT NOT NULL,
     CONSTRAINT Pk_Account_AccountId PRIMARY KEY (account_id),
     CONSTRAINT Fk_Account_UserId FOREIGN KEY `user_id` REFERENCES `User` (`user_id`),
-    CONSTRAINT Fk_Account_OfficeId FOREIGN KEY office_id REFERENCES Office ()
+    CONSTRAINT Fk_Account_OfficeId FOREIGN KEY office_id REFERENCES Office (office_id),
+    CONSTRAINT Uq_Account_UserId UNIQUE `user_id`
 );
 
 CREATE TABLE IF NOT EXISTS `Application` (
